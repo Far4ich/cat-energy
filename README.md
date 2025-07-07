@@ -1,6 +1,6 @@
 # Личный проект «{{projectTitle}}»
 
-* Студент: [Алексей Язаджи]({{https://htmlacademy.ru/profile/id2628365}}).
+* Студент: [Алексей Язаджи](https://htmlacademy.ru/profile/id2628365).
 * Наставник: `Неизвестно`.
 
 ---
