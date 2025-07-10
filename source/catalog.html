@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Cat Energy</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="manifest" href="favicons/manifest.json">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="styles/styles.css">
   <script src="scripts/index.js" defer></script>
@@ -18,8 +22,8 @@
     <nav class="main-nav">
       <button class="main-nav__toggle button-burger" type="button">Показать меню навигации</button>
       <ul class="main-nav__list">
-        <li><a href="#">главная</a></li>
-        <li><a href="#">каталог продукции</a></li>
+        <li><a href="index.html">главная</a></li>
+        <li><a href="catalog.html">каталог продукции</a></li>
         <li><a href="#">подбор программы</a></li>
       </ul>
     </nav>
@@ -31,7 +35,10 @@
 
       <ul class="catalog__production-list">
         <li class="catalog__product">
-          <img class="catalog__product-image" src="#" width="100" height="100" alt="">
+          <picture class="catalog__product-image">
+            <source width="161" height="172" type="image/png" media="(min-width: 768px)" srcset="images/catalog/catalog-1-tablet@1x.png 1x, images/catalog/catalog-1-tablet@2x.png 2x">
+            <img src="images/catalog/catalog-1-mobile@1x.png" srcset="images/catalog/catalog-1-mobile@2x.png 2x" width="68" height="86" alt="Упаковка сat energy pro со вкусом курицы">
+          </picture>
 
           <div class="catalog__product-stats-container">
             <p class="catalog__product-title">Cat Energy PRO 500 г</p>
@@ -117,6 +124,11 @@
         <p class="invitation__adress">ул. Большая Конюшенная, д. 19/8</p>
         <p class="invitation__city">Санкт-Петербург</p>
       </div>
+      <picture class="invitation__map">
+        <source width="1440" height="400" type="image/jpg" media="(min-width: 1440px)" srcset="images/location-desktop@1x.jpg 1x, images/location-desktop@2x.jpg 2x">
+        <source width="768" height="400" type="image/jpg" media="(min-width: 768px)" srcset="images/location-tablet@1x.jpg 1x, images/location-tablet@2x.jpg 2x">
+        <img src="images/location-mobile@1x.jpg" srcset="images/location-mobile@2x.jpg 2x" width="320" height="362" alt="Карта с расположением офиса">
+      </picture>
     </section>
   </main>
 
