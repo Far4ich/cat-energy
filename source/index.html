@@ -16,8 +16,15 @@
 <body class="page__body">
   <header class="header">
     <a class="logo" href="#">
-      <img class="logo__image" src="#" width="100" height="100" alt="Логотип">
-      <p class="logo__text">cat energy</p>
+      <picture>
+        <source media="(min-width: 1440px)" srcset="images/logo-icon-desktop.svg" width="70" height="59" type="image/svg+xml">
+        <source media="(min-width: 768px)" srcset="images/logo-icon-tablet.svg" width="60" height="50" type="image/svg+xml">
+        <img src="images/logo-icon-mobile.svg" width="33" height="38" alt="Логотип Cat Energy.">
+      </picture>
+      <picture>
+        <source media="(min-width: 1440px)" srcset="images/logo-text.svg" width="118" height="21" type="image/svg+xml">
+        <img class="logo-text" src="images/logo-text.svg" width="101" height="18" alt="Cat Energy.">
+      </picture>
     </a>
     <nav class="main-nav">
       <button class="main-nav__toggle button-burger" type="button">Показать меню навигации</button>
@@ -44,12 +51,12 @@
       <button class="functional-food__programm-button button button-primary" type="button">подобрать программу</button>
 
       <ul class="functional-food__functions-list">
-        <li class="functional-food__function-item">
+        <li class="functional-food__function-item functional-food__function-item--weight-loss">
           <p class="functional-food__function-title">Похудение</p>
           <p class="functional-food__function-description">Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.</p>
           <a class="functional-food__function-link" href="#">каталог slim</a>
         </li>
-        <li class="functional-food__function-item">
+        <li class="functional-food__function-item functional-food__function-item--weight-gain">
           <p class="functional-food__function-title">набор массы</p>
           <p class="functional-food__function-description">Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!</p>
           <a class="functional-food__function-link" href="#">каталог pro</a>
@@ -60,17 +67,17 @@
     <section class="how-it-works">
       <h2 class="how-it-works__title">Как это работает</h2>
 
-      <ol class="how-it-works__description-list">
-        <li class="how-it-works__description-item">
+      <ol class="how-it-works__list">
+        <li class="how-it-works__item how-it-works__item--leaf">
           Функциональное питание содержит только полезные питательные вещества.
         </li>
-        <li class="how-it-works__description-item">
+        <li class="how-it-works__item how-it-works__item--powder">
           Выпускается в виде порошка, который нужно лишь залить кипятком и готово.
         </li>
-        <li class="how-it-works__description-item">
+        <li class="how-it-works__item how-it-works__item--eat">
           Замените один-два приема обычной еды на наше функциональное питание.
         </li>
-        <li class="how-it-works__description-item">
+        <li class="how-it-works__item how-it-works__item--hours">
           Уже через месяц наслаждайтесьизменениями к лучшему вашего питомца!
         </li>
       </ol>
@@ -120,19 +127,19 @@
 
     <ul class="footer__socials">
       <li class="footer__social-item">
-        <a class="footer__social-link footer__social-vk" href="#"><span class="visually-hidden">Вконтакте</span></a>
+        <a class="footer__social-link footer__social-link--vk" href="#"><span class="visually-hidden">Вконтакте</span></a>
       </li>
       <li class="footer__social-item">
-        <a class="footer__social-link footer__social-youtube" href="#"><span class="visually-hidden">Youtube</span></a>
+        <a class="footer__social-link footer__social-link--youtube" href="#"><span class="visually-hidden">Youtube</span></a>
       </li>
       <li class="footer__social-item">
-        <a class="footer__social-link footer__social-telegram" href="#"><span class="visually-hidden">Telegram</span></a>
+        <a class="footer__social-link footer__social-link--telegram" href="#"><span class="visually-hidden">Telegram</span></a>
       </li>
     </ul>
 
     <div class="footer__html-academy-logo">
       <p class="footer__html-academy-logo-text">HTML Academy</p>
-      <img class="footer__html-academy-logo-image" src="#" width="100" height="100" alt="Логотип HTML Academy">
+      <img class="footer__html-academy-logo-image" src="images/html-academy-logo.svg" width="100" height="100" alt="Логотип HTML Academy">
     </div>
   </footer>
 
