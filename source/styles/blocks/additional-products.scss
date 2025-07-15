@@ -1,0 +1,10 @@
+.additional-products__buy-all-gift-container {
+  &::before {
+    content: "";
+    display: block;
+    width: 78px;
+    height: 80px;
+    mask-image: url("../../icons/stack.svg#gift");
+    background-color: #000000;
+  }
+}
