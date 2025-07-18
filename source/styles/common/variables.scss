@@ -1,1 +1,12 @@
-/* здесь используйте глобальные переменные */
+//screen
+$tablet-screen: 768px;
+$desktop-screen: 1440px;
+$tablet-screen-max: $desktop-screen - 1px;
+$mobile-screen-max: $tablet-screen - 1px;
+
+
+//colors
+$primary-color: #000000;
+$page-background-color: #ffffff;
+$separator-color: #e6e6e6;
+$special-color: #666666;

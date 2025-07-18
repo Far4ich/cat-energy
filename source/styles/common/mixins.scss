@@ -1,0 +1,39 @@
+@mixin pseudo-element($width, $height) {
+  content: "";
+  display: block;
+  width: $width;
+  height: $height;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin picture-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin clear-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin container {
+  width: 280px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-screen) {
+    width: 704;
+  }
+
+  @media (min-width: $desktop-screen) {
+    width: 1220px;
+  }
+}
