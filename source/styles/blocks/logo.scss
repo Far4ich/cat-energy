@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+
+  @media (min-width: $tablet-screen) {
+    gap: 13px;
+  }
+
+  @media (min-width: $desktop-screen) {
+    gap: 14px;
+  }
+}
+
+.logo__image {
+  @include picture-center;
+}

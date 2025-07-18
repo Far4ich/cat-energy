@@ -1,30 +1,112 @@
+.functional-food__functions-list {
+  @include clear-list;
+}
+
+.functional-food__functions-item {
+  padding: 24px 20px 18px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 50px auto;
+  grid-template-areas:
+    "image       title"
+    "description description"
+    "link        link";
+
+  &::before {
+    grid-area: image;
+  }
+
+  @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title       image"
+      "description image"
+      "link        image";
+  }
+
+  @media (min-width: $desktop-screen) {
+    gap: 62px;
+    grid-template-columns: 100px auto;
+  }
+}
+
 .functional-food__function-item--weight-loss {
-  background-image: url("../../icons/stack.svg#weight-loss");
+  &::before {
+    @include pseudo-element(50px, 53px);
+    background-image: url("../../icons/stack.svg#weight-loss");
+  }
+
+  @media (min-width: $tablet-screen) {
+    &::before {
+      width: 200px;
+      height: 211px;
+    }
+  }
+
+  @media (min-width: $desktop-screen) {
+    &::before {
+      width: 100px;
+      height: 106px;
+    }
+  }
 }
 
 .functional-food__function-item--weight-gain {
-  background-image: url("../../icons/stack.svg#weight-gain");
+  &::before {
+    @include pseudo-element(67px, 50px);
+    background-image: url("../../icons/stack.svg#weight-gain");
+  }
+
+  @media (min-width: $tablet-screen) {
+    &::before {
+      width: 268px;
+      height: 200px;
+    }
+  }
+
+  @media (min-width: $desktop-screen) {
+    &::before {
+      width: 134px;
+      height: 100px;
+    }
+  }
 }
 
+.functional-food__function-title {
+  grid-area: title;
+}
+
+.functional-food__function-description {
+  grid-area: description;
+  padding-bottom: 23px;
+  border-bottom: 1px $separator-color solid;
+
+  @media (min-width: $tablet-screen) {
+    padding-bottom: 0;
+    border: none;
+  }
+}
+
+
 .functional-food__function-link {
+  grid-area: link;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+
   &::after {
-    content: "";
-    display: block;
-    width: 32px;
-    height: 10px;
-    mask-image: url("../../icons/stack.svg#arrow-idle");
+    @include pseudo-element(32px, 10px);
+    mask-image: url("../../icons/stack.svg#arrow");
     background-color: #000000;
+    transition: transform 0.1s linear;
+    transform-origin: left center;
   }
 
   &:active {
     opacity: 0.3;
   }
 
-  &:hover::after {
-    mask-image: url("../../icons/stack.svg#arrow-hovered");
-  }
-
-  &:active::after {
-    opacity: 0.3;
+  &:is(:hover, :active, :focus-visible, :focus)::after {
+    transform: scaleX(1.35);
   }
 }

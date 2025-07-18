@@ -1,0 +1,31 @@
+.main-nav {
+  background-color: $page-background-color;
+}
+
+.main-nav__list {
+  @include clear-list;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet-screen) {
+    flex-direction: row;
+    gap: 33px;
+  }
+}
+
+.main-nav__item {
+  border-top: 1px $separator-color solid;
+
+  & .button {
+    padding: 22px 0;
+  }
+
+  @media (min-width: $tablet-screen) {
+    border-top: none;
+
+    & .button {
+      padding: 14px 0 12px;
+    }
+  }
+}
+

@@ -1,13 +1,36 @@
+.how-it-works__list {
+  @include clear-list;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $tablet-screen) {
+    gap: 60px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $desktop-screen) {
+    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
 .how-it-works__item {
+  display: flex;
+  gap: 20px;
+
   &::before {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 60px;
+    @include pseudo-element(60px, 60px);
+    flex-shrink: 0;
     background-color: #68b738;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30px 32px;
+  }
+
+  @media (min-width: $tablet-screen) {
+    flex-direction: column;
+    gap: 31px;
   }
 }
 

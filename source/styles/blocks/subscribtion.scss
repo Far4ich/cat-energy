@@ -1,0 +1,10 @@
+.subscribtion__form {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+
+  @media (min-width: $tablet-screen) {
+    gap: 0;
+    flex-direction: row;
+  }
+}

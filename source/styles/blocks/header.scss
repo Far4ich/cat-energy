@@ -1,3 +1,57 @@
 .header {
-  padding: 10px 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.header--nav-closed .main-nav {
+  @media (max-width: $tablet-screen-max) {
+    display: none;
+  }
+}
+
+.header__container {
+  padding-top: 13px;
+  padding-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $mobile-screen-max) {
+    & .main-nav {
+      position: absolute;
+      width: 100%;
+      top: 65px;
+    }
+  }
+
+  @media (min-width: $tablet-screen) {
+    @include container;
+    padding-top: 25px;
+    padding-bottom: 0;
+  }
+
+  @media (min-width: $desktop-screen) {
+    padding-top: 55px;
+  }
+}
+
+.header__mobile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  @media (max-width: $mobile-screen-max) {
+    @include container;
+  }
+}
+
+.header__nav-toggle {
+  width: 24px;
+  height: 24px;
+
+  @media (min-width: $tablet-screen) {
+    display: none;
+  }
 }

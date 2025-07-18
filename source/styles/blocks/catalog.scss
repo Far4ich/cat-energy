@@ -1,0 +1,30 @@
+.catalog__production-list {
+  @include clear-list;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $tablet-screen) {
+    gap: 60px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $desktop-screen) {
+    gap: 63px 80px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+
+.catalog__product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (min-width: $tablet-screen) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.catalog__product-button {
+  grid-column: 1 / -1;
+}
