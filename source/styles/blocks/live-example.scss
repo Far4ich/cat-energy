@@ -1,4 +1,6 @@
 .live-example {
+  background-color: $page-background-darken-color;
+  padding: 25px 20px 40px;
   display: flex;
   flex-direction: column;
 
@@ -8,20 +10,65 @@
 }
 
 .live-example__title {
-
+  margin: 0;
+  font-family: $secondary-font;
+  font-size: 36px;
+  line-height: 40px;
 }
 
 .live-example__discription {
-
+  color: $secondary-color;
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .live-example__stats-container {
+  margin-top: 20px;
   display: grid;
-  gap: 20px;
+  gap: 35px 32px;
   grid-template-columns: 1fr 1fr;
 }
 
+.live-example__stat-box {
+  margin: 0;
+  position: relative;
+  padding: 15px 0 11px;
+  border-radius: 3px;
+  border: 1px $special-light-color solid;
+  text-align: center;
+}
+
+.live-example__stat-box-value {
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.live-example__stat-box-description {
+  @include pseudo-element(87px, auto);
+  position: absolute;
+  top: 46px;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: $page-background-darken-color;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0;
+  color: $secondary-color;
+}
+
 .live-example__stat-text {
+  margin: 0;
+  font-family: $secondary-font;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
   grid-column: 1 / -1;
 
   @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
@@ -29,31 +76,59 @@
   }
 }
 
+$slider-container-width: 280px;
+$slider-container-height: 256px;
+
 .live-example__slider-container {
 
+  margin: 20px auto 0;
+  display: flex;
+  width: $slider-container-width;
+  height: $slider-container-height;
+}
+
+.live-example__picture-visible-container {
+  position: relative;
+  width: calc($slider-container-width / 2);
+  height: $slider-container-height;
+  overflow: hidden;
+}
+
+.live-example__picture-visible-container--after {
+  & .live-example__picture {
+    right: 0;
+  }
+}
+
+.live-example__picture {
+  @include pseudo-element($slider-container-width, $slider-container-height);
+  background-color: $page-background-darken-color;
+  position: absolute;
 }
 
 .live-example__cats-separator {
   display: block;
   width: 4px;
-  height: 512px;//100%
-  background-color: #666666;
+  height: $slider-container-height;
+  background-color: $special-color;
   padding: 0;
   border: 0;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 
   &::before {
     @include pseudo-element(40px, 40px);
     @include absolute-center;
-    border: 2px solid black;
+    border: 2px solid $special-color;
     border-radius: 50%;
-    background-color: white;
+    background-color: $special-contrast-color;
   }
 
   &::after {
     @include pseudo-element(24px, 18px);
     @include absolute-center;
     mask-image: url("../../icons/stack.svg#separator-arrows");
-    background-color: black;
+    background-color: $special-color;
   }
 }

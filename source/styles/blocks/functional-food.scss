@@ -1,11 +1,77 @@
+.functional-food {
+  position: relative;
+  background-image:
+    image-set(
+      url("../../images/index/index-background-mobile@1x.webp") 1x type("image/webp"),
+      url("../../images/index/index-background-mobile@2x.webp") 2x type("image/webp"),
+      url("../../images/index/index-background-mobile@1x.jpeg") 1x type("image/jpeg"),
+      url("../../images/index/index-background-mobile@2x.jpeg") 2x type("image/jpeg")
+    );
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 320px 302px;
+
+  &::before {
+    @include pseudo-element(100%, 302px);
+    position: absolute;
+    opacity: 0.85;
+    background-color: #69b738;
+  }
+
+  & .page__container {
+    position: relative;
+    z-index: 1;
+    padding-top: 27px;
+  }
+}
+
+.functional-food__title {
+  margin: 0;
+  font-family: $secondary-font;
+  text-align: center;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  color: $contrast-color;
+}
+
+.functional-food__description {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-family: $secondary-font;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: $contrast-color;
+  text-transform: uppercase;
+}
+
+.functional-food__programm-button {
+  padding: 10px 26px;
+  margin-top: 3px;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+}
+
+.functional-food__example-image-container {
+  display: block;
+  margin-top: 29px;
+  height: 270px;
+}
+
 .functional-food__functions-list {
   @include clear-list;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .functional-food__functions-item {
   padding: 24px 20px 18px;
   display: grid;
-  gap: 20px;
   grid-template-columns: 50px auto;
   grid-template-areas:
     "image       title"
@@ -54,6 +120,7 @@
 .functional-food__function-item--weight-gain {
   &::before {
     @include pseudo-element(67px, 50px);
+    transform: translateX(-8px);
     background-image: url("../../icons/stack.svg#weight-gain");
   }
 
@@ -73,10 +140,20 @@
 }
 
 .functional-food__function-title {
+  margin: auto 0;
+  margin-left: 20px;
   grid-area: title;
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
 }
 
 .functional-food__function-description {
+  margin-top: 22px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 18px;
   grid-area: description;
   padding-bottom: 23px;
   border-bottom: 1px $separator-color solid;
@@ -89,9 +166,11 @@
 
 
 .functional-food__function-link {
+  margin-top: 15px;
+  color: $primary-color;
   grid-area: link;
   display: flex;
-  gap: 25px;
+  gap: 15px;
   align-items: center;
 
   &::after {

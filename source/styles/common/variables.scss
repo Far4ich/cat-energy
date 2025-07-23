@@ -7,6 +7,15 @@ $mobile-screen-max: $tablet-screen - 1px;
 
 //colors
 $primary-color: #000000;
+$secondary-color: #444444;
+$contrast-color: #ffffff;
+
+$button-primary-color: #68b738;
+$button-primary-contrast-color: $contrast-color;
+
 $page-background-color: #ffffff;
+$page-background-darken-color: #eaeaea;
 $separator-color: #e6e6e6;
 $special-color: #666666;
+$special-light-color: #cdcdcd;
+$special-contrast-color: #ffffff;

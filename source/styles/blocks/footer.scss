@@ -15,7 +15,7 @@
   }
 
   @media (max-width: $mobile-screen-max) {
-    .page__container > * {
+    .page__container > :not(:last-child) {
       width: 100%;
       padding-bottom: 20px;
       display: flex;
@@ -65,8 +65,18 @@
   }
 }
 
-.footer__html-academy-logo {
+.footer .footer__html-academy-logo {
   display: flex;
   align-items: center;
   gap: 23px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footer__html-academy-logo-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: $secondary-color;
 }
