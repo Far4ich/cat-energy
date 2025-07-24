@@ -2,10 +2,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: $tablet-screen) {
+    & .main-nav {
+      margin-right: 4px;
+    }
+  }
 }
 
 .header--nav-closed .main-nav {
-  @media (max-width: $tablet-screen-max) {
+  @media (max-width: $mobile-screen-max) {
     display: none;
   }
 }

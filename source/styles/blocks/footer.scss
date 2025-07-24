@@ -8,7 +8,10 @@
   }
 
   @media (min-width: $tablet-screen) {
+    padding: 55px 0;
+
     & .page__container {
+      min-height: 37px;
       justify-content: space-between;
       flex-direction: row;
     }
@@ -34,6 +37,10 @@
   display: flex;
   justify-content: center;
   gap: 24px;
+
+  @media (min-width: $tablet-screen) {
+    margin-left: 36px;
+  }
 }
 
 .footer__social-link {
@@ -69,8 +76,11 @@
   display: flex;
   align-items: center;
   gap: 23px;
-  width: 100%;
-  justify-content: space-between;
+
+  @media (max-width: $mobile-screen-max) {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .footer__html-academy-logo-text {

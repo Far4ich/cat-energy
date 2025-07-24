@@ -30,10 +30,12 @@
   margin: 0 auto;
 
   @media (min-width: $tablet-screen) {
-    width: 704;
+    width: 708;
+    padding: 0 30px;
   }
 
   @media (min-width: $desktop-screen) {
     width: 1220px;
+    padding: 0 110px;
   }
 }

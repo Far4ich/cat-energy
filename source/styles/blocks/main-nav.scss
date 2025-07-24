@@ -18,13 +18,30 @@
 
   & .button {
     padding: 22px 0;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0;
   }
 
   @media (min-width: $tablet-screen) {
     border-top: none;
+    position: relative;
 
     & .button {
       padding: 14px 0 12px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
+
+.main-nav__item--active {
+  @media (min-width: $tablet-screen) {
+    &::after {
+      @include pseudo-element(100%, 2px);
+      position: absolute;
+      bottom: 2px;
+      background-color: $button-primary-color;
     }
   }
 }

@@ -22,29 +22,64 @@
     position: relative;
     z-index: 1;
     padding-top: 27px;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet-screen) {
+      padding-top: 65px;
+    }
+  }
+
+  @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
+    background: none;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+$functional-food-left-margin-tablet: 90px;
+$functional-food-left-margin-desktop: 80px;
+
+.functional-food__title,
+.functional-food__description {
+  font-family: $secondary-font;
+  text-align: center;
+  font-weight: 400;
+  color: $contrast-color;
+
+  @media (min-width: $tablet-screen) {
+    color: $primary-color;
+    text-align: left;
+    margin-left: $functional-food-left-margin-tablet;
   }
 }
 
 .functional-food__title {
-  margin: 0;
-  font-family: $secondary-font;
-  text-align: center;
-  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 36px;
   line-height: 36px;
-  color: $contrast-color;
+
+  @media (min-width: $tablet-screen) {
+    font-size: 60px;
+    line-height: 60px;
+  }
 }
 
 .functional-food__description {
   margin-top: 25px;
   margin-bottom: 0;
-  font-family: $secondary-font;
-  text-align: center;
-  font-weight: 400;
   font-size: 14px;
   line-height: 14px;
-  color: $contrast-color;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 20px;
+  }
 }
 
 .functional-food__programm-button {
@@ -53,12 +88,29 @@
   font-size: 16px;
   line-height: 20px;
   width: 100%;
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 50px;
+    margin-left: $functional-food-left-margin-tablet;
+    width: fit-content;
+    font-size: 20px;
+    line-height: 26px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
 }
 
 .functional-food__example-image-container {
   display: block;
   margin-top: 29px;
   height: 270px;
+
+  @media (min-width: $tablet-screen) {
+    position: absolute;
+    left: 30px;
+    top: 237px;
+    z-index: -1;
+  }
 }
 
 .functional-food__functions-list {
@@ -67,6 +119,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 526px;
+    gap: 30px;
+  }
 }
 
 .functional-food__functions-item {
@@ -80,10 +137,15 @@
 
   &::before {
     grid-area: image;
+
+    @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
+      justify-self: end;
+    }
   }
 
   @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
-    grid-template-columns: 1fr 1fr;
+    padding: 77px 29px 62px 53px;
+    grid-template-columns: 340px 1fr;
     grid-template-areas:
       "title       image"
       "description image"
@@ -100,6 +162,13 @@
   &::before {
     @include pseudo-element(50px, 53px);
     background-image: url("../../icons/stack.svg#weight-loss");
+  }
+
+  @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
+    &::before {
+      margin-top: 4px;
+      margin-right: 34px;
+    }
   }
 
   @media (min-width: $tablet-screen) {
@@ -126,6 +195,7 @@
 
   @media (min-width: $tablet-screen) {
     &::before {
+      margin-top: 14px;
       width: 268px;
       height: 200px;
     }
@@ -147,6 +217,12 @@
   font-size: 24px;
   line-height: 37px;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-screen) {
+    font-size: 36px;
+    line-height: 36px;
+    margin-left: 0;
+  }
 }
 
 .functional-food__function-description {
@@ -159,8 +235,11 @@
   border-bottom: 1px $separator-color solid;
 
   @media (min-width: $tablet-screen) {
+    margin-top: 24px;
     padding-bottom: 0;
     border: none;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
@@ -174,7 +253,7 @@
   align-items: center;
 
   &::after {
-    @include pseudo-element(32px, 10px);
+    @include pseudo-element(32px, 12px);
     mask-image: url("../../icons/stack.svg#arrow");
     background-color: #000000;
     transition: transform 0.1s linear;
@@ -187,5 +266,12 @@
 
   &:is(:hover, :active, :focus-visible, :focus)::after {
     transform: scaleX(1.35);
+  }
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 57px;
+    gap: 25px;
+    font-size: 20px;
+    line-height: 100%;
   }
 }

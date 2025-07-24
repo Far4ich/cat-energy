@@ -1,9 +1,23 @@
 .index {
   & .how-it-works {
     margin-top: 20px;
+
+    @media (min-width: $tablet-screen) {
+      margin-top: 45px;
+    }
   }
 
   & .live-example {
     margin-top: 49px;
+
+    @media (min-width: $tablet-screen) {
+      margin-top: 45px;
+    }
+  }
+
+  @media (min-width: $tablet-screen) {
+    & .header {
+      margin-top: 25px;
+    }
   }
 }
