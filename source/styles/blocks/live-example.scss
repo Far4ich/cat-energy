@@ -5,21 +5,25 @@
   display: flex;
   flex-direction: column;
 
-  @media (min-width: $desktop-screen) {
-    flex-direction: row;
-  }
-
   @media (min-width: $tablet-screen) {
     padding: 0 30px 101px;
     background-color: $page-background-color;
 
     &::before {
-      @include pseudo-element(100%, 462px);
+      @include pseudo-element(100vw, 462px);
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
       background-color: $page-background-darken-color;
     }
+  }
+
+  @media (min-width: $desktop-screen) {
+    @include container;
+    flex-direction: row;
+    gap: 227px;
+    padding-bottom: 75px;
   }
 }
 
@@ -47,6 +51,10 @@
   @media (min-width: $tablet-screen) {
     margin-top: 60px;
   }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 146px;
+  }
 }
 
 .live-example__stats-container {
@@ -59,6 +67,10 @@
     margin-top: 55px;
     grid-template-columns: 162px 162px;
     gap: 43px;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 68px;
   }
 }
 
@@ -125,23 +137,29 @@
   grid-column: 1 / -1;
 
   @media (min-width: $tablet-screen) {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
     font-size: 20px;
     line-height: 20px;
-    text-align: right;
-    align-self: center;
+    display: flex;
+    gap: 9px;
   }
 
   @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
     grid-column: -1 / -1;
+    flex-direction: column;
+    text-align: right;
+    align-self: center;
   }
 
   @media (max-width: $mobile-screen-max), (min-width: $desktop-screen) {
     & br {
       display: none;
     }
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 18px;
+    justify-content: space-between;
+    padding-right: 40px;
   }
 }
 
@@ -152,6 +170,7 @@ $slider-container-width-tablet: 560px;
 $slider-container-height-tablet: 512px;
 
 .live-example__slider-container {
+  position: relative;
   margin: 20px auto 0;
   display: flex;
   width: $slider-container-width-mobile;
@@ -161,6 +180,10 @@ $slider-container-height-tablet: 512px;
     margin-top: 104px;
     width: $slider-container-width-tablet;
     height: $slider-container-height-tablet;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 0;
   }
 }
 
@@ -207,7 +230,7 @@ $slider-container-height-tablet: 512px;
   transform: translateX(-50%);
 
   &::before {
-    @include pseudo-element(40px, 40px);
+    @include pseudo-element(36px, 36px);
     @include absolute-center;
     border: 2px solid $special-color;
     border-radius: 50%;

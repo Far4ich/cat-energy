@@ -10,20 +10,28 @@
       height: 400px;
     }
   }
+
+  & .page__container {
+    position: relative;
+  }
 }
 
 .invitation__container {
-  padding: 26px 20px;
+  padding-top: 26px;
+  padding-bottom: 26px;
   display: flex;
   justify-content: space-between;
 
   @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
-    padding: 60px 70px;
+    padding: 60px 40px;
   }
 
   @media (min-width: $desktop-screen) {
+    gap: 96px;
+    padding: 60px 80px;
+    padding-right: 78px;
     position: absolute;
-    top: 95px;
+    top: 96px;
     left: 110px;
     background-color: $page-background-color;
   }
@@ -61,6 +69,10 @@
 
   @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
     text-align: right;
+  }
+
+  @media (min-width: $desktop-screen) {
+    min-width: 157px;
   }
 }
 

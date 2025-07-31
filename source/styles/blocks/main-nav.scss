@@ -1,5 +1,9 @@
 .main-nav {
   background-color: $page-background-color;
+
+  @media (min-width: $tablet-screen) {
+    background-color: inherit;
+  }
 }
 
 .main-nav__list {
@@ -30,7 +34,16 @@
     & .button {
       padding: 14px 0 12px;
       font-size: 18px;
+      letter-spacing: 0;
       line-height: 24px;
+    }
+  }
+
+  @media (min-width: $desktop-screen) {
+    & .button {
+      color: $page-background-color;
+      font-size: 20px;
+      line-height: 100%;
     }
   }
 }
@@ -42,6 +55,13 @@
       position: absolute;
       bottom: 2px;
       background-color: $button-primary-color;
+    }
+  }
+
+  @media (min-width: $desktop-screen) {
+    &::after {
+      background-color: $page-background-color;
+      bottom: 0;
     }
   }
 }

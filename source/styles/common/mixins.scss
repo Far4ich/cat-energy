@@ -26,16 +26,19 @@
 
 @mixin container {
   width: 280px;
-  padding: 0 20px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin: 0 auto;
 
   @media (min-width: $tablet-screen) {
     width: 708;
-    padding: 0 30px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 
   @media (min-width: $desktop-screen) {
     width: 1220px;
-    padding: 0 110px;
+    padding-right: 110px;
+    padding-left: 110px;
   }
 }

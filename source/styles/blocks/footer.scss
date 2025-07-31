@@ -30,6 +30,11 @@
       border-top: 1px $separator-color solid;
     }
   }
+
+  @media (min-width: $desktop-screen) {
+    padding-top: 66px;
+    padding-bottom: 66px;
+  }
 }
 
 .footer__socials {
