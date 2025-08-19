@@ -1,0 +1,1 @@
+var s=document.querySelector(".header"),e=document.querySelector(".header__nav-toggle");e.addEventListener("click",()=>{s.classList.contains("header--nav-closed")?(s.classList.remove("header--nav-closed"),e.classList.remove("button--burger"),e.classList.add("button--x")):(s.classList.add("header--nav-closed"),e.classList.add("button--burger"),e.classList.remove("button--x"))});
