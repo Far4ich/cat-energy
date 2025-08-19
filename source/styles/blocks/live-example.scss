@@ -45,7 +45,7 @@
 
 .live-example__discription {
   color: $secondary-color;
-  margin-top: 40px;
+  margin-top: 41px;
   margin-bottom: 0;
 
   @media (min-width: $tablet-screen) {
@@ -123,6 +123,10 @@
     & br {
       display: none;
     }
+  }
+
+  @media (min-width: $desktop-screen) {
+    background-color: $page-background-darken-color;
   }
 }
 
@@ -228,6 +232,12 @@ $slider-container-height-tablet: 512px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  transition: background-color 250ms ease-in-out, opacity 250ms ease-in-out;
+
+  &::before,
+  &::after {
+    transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  }
 
   &::before {
     @include pseudo-element(36px, 36px);
@@ -242,6 +252,28 @@ $slider-container-height-tablet: 512px;
     @include absolute-center;
     mask-image: url("../../icons/stack.svg#separator-arrows");
     background-color: $special-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $button-primary-color;
+  }
+
+  &:hover::before,
+  &:focus::before,
+  &:focus-visible::before {
+    border-color: $button-primary-color;
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &:focus-visible::after {
+    background-color: $button-primary-color;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 
   @media (min-width: $tablet-screen) {

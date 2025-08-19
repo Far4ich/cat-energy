@@ -6,7 +6,6 @@
   font-size: 16px;
   line-height: 20px;
   color: $primary-color;
-  text-wrap: nowrap;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
@@ -22,9 +21,59 @@
   mask-image: url("../../icons/stack.svg#burger-button");
   mask-size: 24px 24px;
   background-color: $primary-color;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $button-primary-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.button--x {
+  width: 18px;
+  height: 18px;
+  mask-image: url("../../icons/stack.svg#xmark");
+  mask-size: 18px 18px;
+  background-color: $primary-color;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $button-primary-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .button--primary {
   background-color: $button-primary-color;
   color: $button-primary-contrast-color;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $button-primary-hover-color;
+  }
+
+  &:active {
+    color: $button-primary-active-contrast-color;
+  }
+}
+
+.button--secondary {
+  background-color: $button-secondary-color;
+  color: $secondary-color;
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    background-color: $button-secondary-hover-color;
+  }
 }

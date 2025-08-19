@@ -11,11 +11,20 @@ $secondary-color: #444444;
 $contrast-color: #ffffff;
 
 $button-primary-color: #68b738;
-$button-primary-contrast-color: $contrast-color;
+$button-primary-contrast-color: #ffffff;
+$button-primary-hover-color: #5eaa2f;
+$button-primary-active-contrast-color: rgba(255, 255, 255, 0.3);
+$button-secondary-color: #f2f2f2;
+$button-secondary-hover-color: #ebebeb;
+
+$input-border-color: #e7e7e7;
+$input-invalid-color: #ff8282;
 
 $page-background-color: #ffffff;
 $page-background-darken-color: #eaeaea;
 $separator-color: #e6e6e6;
+$catalog-separator: #ebebeb;
+$icon-color: #d3d3d3;
 $special-color: #666666;
 $special-light-color: #cdcdcd;
 $special-contrast-color: #ffffff;

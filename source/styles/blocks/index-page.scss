@@ -27,7 +27,7 @@
   }
 
   &::before {
-    @include pseudo-element(320px, 302px);
+    @include pseudo-element(100%, 302px);
     background-image:
       image-set(
         url("../../images/index/index-background-mobile@1x.webp") 1x type("image/webp"),
@@ -36,13 +36,13 @@
         url("../../images/index/index-background-mobile@2x.jpeg") 2x type("image/jpeg")
       );
     background-repeat: no-repeat;
+    background-position: center;
     background-size: 320px 302px;
     position: absolute;
     top: 65px;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0.85;
-    background-color: #69b738;
+    background-color: #63a63d;
   }
 
   @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
@@ -55,8 +55,9 @@
     &::before {
       transform: none;
       top: 0;
-      width: 720px;
+      width: 50%;
       height: 694;
+      background-color: #61a83c;
       background-image:
         image-set(
           url("../../images/index/index-background-desktop@1x.webp") 1x type("image/webp"),
@@ -64,8 +65,8 @@
           url("../../images/index/index-background-desktop@1x.jpeg") 1x type("image/jpeg"),
           url("../../images/index/index-background-desktop@2x.jpeg") 2x type("image/jpeg")
         );
-
       background-size: contain;
+      background-position: right;
     }
   }
 }

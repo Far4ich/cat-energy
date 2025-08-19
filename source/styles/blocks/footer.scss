@@ -20,7 +20,7 @@
   @media (max-width: $mobile-screen-max) {
     .page__container > :not(:last-child) {
       width: 100%;
-      padding-bottom: 20px;
+      padding-bottom: 19px;
       display: flex;
       justify-content: center;
     }
@@ -56,6 +56,17 @@
   &::before {
     @include pseudo-element(28px, 22px);
     background-color: $special-color;
+    transition: background-color 250ms ease-in-out, opacity 250ms ease-in-out;
+  }
+
+  &:hover::before,
+  &:focus::before,
+  &:focus-visible::before {
+    background-color: $button-primary-color;
+  }
+
+  &:active::before {
+    opacity: 0.3;
   }
 }
 
@@ -77,14 +88,37 @@
   }
 }
 
-.footer .footer__html-academy-logo {
+.footer__html-academy-logo-image-hover {
+  display: none;
+}
+
+.footer__html-academy-logo {
   display: flex;
   align-items: center;
   gap: 23px;
+  text-decoration: none;
+  transition: opacity 250ms ease-in-out;
 
   @media (max-width: $mobile-screen-max) {
     width: 100%;
     justify-content: space-between;
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    .footer__html-academy-logo-image {
+      display: none;
+    }
+
+    .footer__html-academy-logo-image-hover {
+      display: block;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 

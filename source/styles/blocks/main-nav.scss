@@ -9,22 +9,44 @@
 .main-nav__list {
   @include clear-list;
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
 
   @media (min-width: $tablet-screen) {
     flex-direction: row;
     gap: 33px;
   }
+
+  @media (min-width: $desktop-screen) {
+    max-width: 575px;
+  }
 }
 
 .main-nav__item {
   border-top: 1px $separator-color solid;
+  transition: opacity 0.2s ease-in-out;
 
   & .button {
     padding: 22px 0;
     font-size: 20px;
     line-height: 20px;
     letter-spacing: 0;
+    text-wrap: wrap;
+  }
+
+  &:has(.button:hover),
+  &:has(.button:focus),
+  &:has(.button:focus-visible) {
+    opacity: 0.6;
+  }
+
+  &:has(.button:active) {
+    opacity: 0.3;
+  }
+
+  @media (max-width: $mobile-screen-max) {
+    &:last-child {
+      border-bottom: 1px $separator-color solid;
+    }
   }
 
   @media (min-width: $tablet-screen) {
@@ -41,7 +63,6 @@
 
   @media (min-width: $desktop-screen) {
     & .button {
-      color: $page-background-color;
       font-size: 20px;
       line-height: 100%;
     }
@@ -53,16 +74,29 @@
     &::after {
       @include pseudo-element(100%, 2px);
       position: absolute;
-      bottom: 2px;
+      bottom: 3px;
       background-color: $button-primary-color;
     }
   }
 
   @media (min-width: $desktop-screen) {
     &::after {
-      background-color: $page-background-color;
       bottom: 0;
     }
   }
 }
 
+
+.main-nav--image-contrast {
+  @media (min-width: $desktop-screen) {
+    & .button {
+      color: $page-background-color;
+    }
+  }
+
+  @media (min-width: $desktop-screen) {
+    & .main-nav__item--active::after {
+      background-color: $page-background-color;
+    }
+  }
+}
