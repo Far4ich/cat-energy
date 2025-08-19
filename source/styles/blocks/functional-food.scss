@@ -1,11 +1,133 @@
+.functional-food {
+  & .page__container {
+    position: relative;
+    z-index: 1;
+    padding-top: 27px;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet-screen) {
+      padding-top: 65px;
+    }
+
+    @media (min-width: $desktop-screen) {
+      padding-top: 110px;
+    }
+  }
+}
+
+.functional-food__hero-container {
+  @media (min-width: $tablet-screen) {
+    margin-left: 90px;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-left: 80px;
+  }
+}
+
+.functional-food__title,
+.functional-food__description {
+  font-family: $secondary-font;
+  text-align: center;
+  font-weight: 400;
+  color: $contrast-color;
+
+  @media (min-width: $tablet-screen) {
+    color: $primary-color;
+    text-align: left;
+  }
+}
+
+.functional-food__title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: $tablet-screen) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+.functional-food__description {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.functional-food__programm-button {
+  padding: 10px 26px;
+  margin-top: 3px;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%;
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 50px;
+    width: fit-content;
+    letter-spacing: 0%;
+    font-size: 20px;
+    line-height: 26px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 52px;
+  }
+}
+
+.functional-food__example-image-container {
+  display: block;
+  margin-top: 29px;
+  height: 270px;
+
+  @media (min-width: $tablet-screen) {
+    position: absolute;
+    left: 20px;
+    top: 237px;
+    z-index: -1;
+  }
+
+  @media (min-width: $desktop-screen) {
+    left: 547px;
+    top: 0;
+  }
+}
+
 .functional-food__functions-list {
   @include clear-list;
+  margin-top: 16px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 23px;
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 526px;
+    gap: 30px;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 260px;
+    flex-direction: row;
+    gap: 80px;
+  }
 }
 
 .functional-food__functions-item {
   padding: 24px 20px 18px;
   display: grid;
-  gap: 20px;
+  box-sizing: border-box;
   grid-template-columns: 50px auto;
   grid-template-areas:
     "image       title"
@@ -14,10 +136,15 @@
 
   &::before {
     grid-area: image;
+
+    @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
+      justify-self: end;
+    }
   }
 
   @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
-    grid-template-columns: 1fr 1fr;
+    padding: 77px 29px 62px 53px;
+    grid-template-columns: 340px 1fr;
     grid-template-areas:
       "title       image"
       "description image"
@@ -25,15 +152,25 @@
   }
 
   @media (min-width: $desktop-screen) {
-    gap: 62px;
+    gap: 0 62px;
     grid-template-columns: 100px auto;
+    padding: 47px 61px 55px 52px;
+    max-width: 570px;
   }
 }
 
-.functional-food__function-item--weight-loss {
+.functional-food__functions-item--weight-loss {
   &::before {
     @include pseudo-element(50px, 53px);
     background-image: url("../../icons/stack.svg#weight-loss");
+  }
+
+  @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
+    &::before {
+      background-image: url("../../icons/stack.svg#weight-loss-tablet");
+      margin-top: 4px;
+      margin-right: 34px;
+    }
   }
 
   @media (min-width: $tablet-screen) {
@@ -51,14 +188,18 @@
   }
 }
 
-.functional-food__function-item--weight-gain {
+.functional-food__functions-item--weight-gain {
   &::before {
     @include pseudo-element(67px, 50px);
+    transform: translateX(-8px);
     background-image: url("../../icons/stack.svg#weight-gain");
   }
 
   @media (min-width: $tablet-screen) {
     &::before {
+      background-image: url("../../icons/stack.svg#weight-gain-tablet");
+      transform: translateX(0);
+      margin-top: 14px;
       width: 268px;
       height: 200px;
     }
@@ -66,6 +207,8 @@
 
   @media (min-width: $desktop-screen) {
     &::before {
+      transform: translateX(-19px);
+      margin-top: 7px;
       width: 134px;
       height: 100px;
     }
@@ -73,29 +216,54 @@
 }
 
 .functional-food__function-title {
+  margin: auto 0;
+  margin-left: 20px;
   grid-area: title;
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-screen) {
+    font-size: 36px;
+    line-height: 36px;
+    margin-left: 0;
+  }
 }
 
 .functional-food__function-description {
+  margin-top: 22px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 18px;
   grid-area: description;
   padding-bottom: 23px;
   border-bottom: 1px $separator-color solid;
 
   @media (min-width: $tablet-screen) {
+    margin-top: 24px;
     padding-bottom: 0;
     border: none;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 38px;
   }
 }
 
 
 .functional-food__function-link {
+  margin-top: 16px;
+  color: $primary-color;
   grid-area: link;
   display: flex;
-  gap: 25px;
+  gap: 15px;
   align-items: center;
 
   &::after {
-    @include pseudo-element(32px, 10px);
+    @include pseudo-element(32px, 12px);
     mask-image: url("../../icons/stack.svg#arrow");
     background-color: #000000;
     transition: transform 0.1s linear;
@@ -108,5 +276,16 @@
 
   &:is(:hover, :active, :focus-visible, :focus)::after {
     transform: scaleX(1.35);
+  }
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 57px;
+    gap: 25px;
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 32px;
   }
 }

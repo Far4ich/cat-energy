@@ -3,6 +3,19 @@
   gap: 56px;
   align-items: center;
 
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+
   @media (min-width: $tablet-screen) {
     gap: 13px;
   }
@@ -14,4 +27,8 @@
 
 .logo__image {
   @include picture-center;
+}
+
+.logo__text {
+  margin-top: 10px;
 }

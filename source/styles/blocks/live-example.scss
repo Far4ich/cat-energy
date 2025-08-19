@@ -1,59 +1,282 @@
 .live-example {
+  position: relative;
+  background-color: $page-background-darken-color;
+  padding: 25px 20px 40px;
   display: flex;
   flex-direction: column;
 
-  @media (min-width: $desktop-screen) {
-    flex-direction: row;
+  @media (min-width: $tablet-screen) {
+    padding: 0 30px 101px;
+    background-color: $page-background-color;
+
+    &::before {
+      @include pseudo-element(100vw, 462px);
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $page-background-darken-color;
+    }
   }
+
+  @media (min-width: $desktop-screen) {
+    @include container;
+    flex-direction: row;
+    gap: 227px;
+    padding-bottom: 75px;
+  }
+}
+
+.live-example__text-container {
+  position: relative;
 }
 
 .live-example__title {
+  margin: 0;
+  font-family: $secondary-font;
+  font-size: 36px;
+  line-height: 40px;
 
-}
-
-.live-example__discription {
-
-}
-
-.live-example__stats-container {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr;
-}
-
-.live-example__stat-text {
-  grid-column: 1 / -1;
-
-  @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
-    grid-column: -1 / -1;
+  @media (min-width: $tablet-screen) {
+    font-size: 60px;
+    line-height: 60px;
   }
 }
 
-.live-example__slider-container {
+.live-example__discription {
+  color: $secondary-color;
+  margin-top: 41px;
+  margin-bottom: 0;
 
+  @media (min-width: $tablet-screen) {
+    margin-top: 60px;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 146px;
+  }
+}
+
+.live-example__stats-container {
+  margin-top: 20px;
+  display: grid;
+  gap: 35px 32px;
+  grid-template-columns: 1fr 1fr;
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 55px;
+    grid-template-columns: 162px 162px;
+    gap: 43px;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 68px;
+  }
+}
+
+.live-example__stat-box {
+  margin: 0;
+  position: relative;
+  padding: 15px 0 11px;
+  border-radius: 3px;
+  border: 1px $special-light-color solid;
+  text-align: center;
+
+  @media (min-width: $tablet-screen) {
+    padding: 15px 0 17px;
+  }
+}
+
+.live-example__stat-box-value {
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-screen) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
+
+.live-example__stat-box-description {
+  width: 87px;
+  position: absolute;
+  top: 46px;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: $page-background-darken-color;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0;
+  color: $secondary-color;
+
+  @media (min-width: $tablet-screen) {
+    background-color: $page-background-color;
+    width: max-content;
+    padding: 0 9px;
+    top: 62px;
+    font-size: 14px;
+    line-height: 14px;
+
+    & br {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-screen) {
+    background-color: $page-background-darken-color;
+  }
+}
+
+.live-example__stat-text {
+  margin: 0;
+  font-family: $secondary-font;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
+  grid-column: 1 / -1;
+
+  @media (min-width: $tablet-screen) {
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    gap: 9px;
+  }
+
+  @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
+    grid-column: -1 / -1;
+    flex-direction: column;
+    text-align: right;
+    align-self: center;
+  }
+
+  @media (max-width: $mobile-screen-max), (min-width: $desktop-screen) {
+    & br {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 18px;
+    justify-content: space-between;
+    padding-right: 40px;
+  }
+}
+
+$slider-container-width-mobile: 280px;
+$slider-container-height-mobile: 256px;
+
+$slider-container-width-tablet: 560px;
+$slider-container-height-tablet: 512px;
+
+.live-example__slider-container {
+  position: relative;
+  margin: 20px auto 0;
+  display: flex;
+  width: $slider-container-width-mobile;
+  height: $slider-container-height-mobile;
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 104px;
+    width: $slider-container-width-tablet;
+    height: $slider-container-height-tablet;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 0;
+  }
+}
+
+.live-example__picture-visible-container {
+  position: relative;
+  width: calc($slider-container-width-mobile / 2);
+  height: $slider-container-height-mobile;
+  overflow: hidden;
+
+  @media (min-width: $tablet-screen) {
+    width: calc($slider-container-width-tablet / 2);
+    height: $slider-container-height-tablet;
+  }
+}
+
+.live-example__picture-visible-container--after {
+  & .live-example__picture {
+    right: 0;
+  }
+}
+
+.live-example__picture {
+  @include pseudo-element($slider-container-width-mobile, $slider-container-height-mobile);
+  background-color: $page-background-darken-color;
+  position: absolute;
+
+  @media (min-width: $tablet-screen) {
+    background-color: inherit;
+    width: $slider-container-width-tablet;
+    height: $slider-container-height-tablet;
+  }
 }
 
 .live-example__cats-separator {
   display: block;
   width: 4px;
-  height: 512px;//100%
-  background-color: #666666;
+  border-radius: 2px;
+  height: $slider-container-height-mobile;
+  background-color: $special-color;
   padding: 0;
   border: 0;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 250ms ease-in-out, opacity 250ms ease-in-out;
+
+  &::before,
+  &::after {
+    transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+  }
 
   &::before {
-    @include pseudo-element(40px, 40px);
+    @include pseudo-element(36px, 36px);
     @include absolute-center;
-    border: 2px solid black;
+    border: 2px solid $special-color;
     border-radius: 50%;
-    background-color: white;
+    background-color: $special-contrast-color;
   }
 
   &::after {
     @include pseudo-element(24px, 18px);
     @include absolute-center;
     mask-image: url("../../icons/stack.svg#separator-arrows");
-    background-color: black;
+    background-color: $special-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $button-primary-color;
+  }
+
+  &:hover::before,
+  &:focus::before,
+  &:focus-visible::before {
+    border-color: $button-primary-color;
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &:focus-visible::after {
+    background-color: $button-primary-color;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @media (min-width: $tablet-screen) {
+    height: $slider-container-height-tablet;
   }
 }

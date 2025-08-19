@@ -1,10 +1,126 @@
+.subscribtion__title {
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0;
+  margin: 0;
+
+  @media (min-width: $tablet-screen) {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  @media (min-width: $tablet-screen) and (max-width: $tablet-screen-max) {
+    margin-left: 80px;
+
+    &:first-child {
+      transform: translateX(-40px);
+    }
+  }
+
+  @media (min-width: $desktop-screen) {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.subscribtion__container {
+  margin-top: 32px;
+
+  @media (min-width: $tablet-screen) {
+    margin-top: 66px;
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  @media (min-width: $desktop-screen) {
+    margin-top: 72px;
+  }
+}
+
+.subscribtion__description {
+  margin: 0;
+  font-family: $secondary-font;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  margin-bottom: 0;
+  text-align: center;
+
+  @media (min-width: $tablet-screen) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
 .subscribtion__form {
   display: flex;
   gap: 16px;
   flex-direction: column;
+  margin-top: 24px;
 
   @media (min-width: $tablet-screen) {
     gap: 0;
     flex-direction: row;
+  }
+
+  @media (min-width: $desktop-screen) {
+    justify-content: center;
+  }
+}
+
+.subscribtion__mail-label {
+  @media (min-width: $tablet-screen) {
+    width: auto;
+    flex-grow: 1;
+    max-width: 496px;
+  }
+}
+
+.subscribtion__mail-input {
+  font-family: $secondary-font;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: $secondary-color;
+
+  width: calc(100% - 26px);
+  padding: 12px;
+  border: 1px solid $input-border-color;
+  border-radius: 0;
+
+  &:hover {
+    border-color: $special-light-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border: 2px solid $secondary-color;
+    padding: 11px;
+  }
+
+  &:invalid {
+    border: 2px solid $input-invalid-color;
+    padding: 11px;
+
+    &:focus,
+    &:focus-visible {
+      border-color: $secondary-color;
+    }
+  }
+}
+
+.subscribtion__submit-button {
+  font-size: 20px;
+  line-height: 26px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  @media (min-width: $tablet-screen) {
+    min-width: 256px;
+    max-width: 256px;
+    flex-shrink: 0;
   }
 }

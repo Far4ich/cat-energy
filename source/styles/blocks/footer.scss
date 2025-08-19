@@ -8,16 +8,19 @@
   }
 
   @media (min-width: $tablet-screen) {
+    padding: 55px 0;
+
     & .page__container {
+      min-height: 37px;
       justify-content: space-between;
       flex-direction: row;
     }
   }
 
   @media (max-width: $mobile-screen-max) {
-    .page__container > * {
+    .page__container > :not(:last-child) {
       width: 100%;
-      padding-bottom: 20px;
+      padding-bottom: 19px;
       display: flex;
       justify-content: center;
     }
@@ -27,6 +30,11 @@
       border-top: 1px $separator-color solid;
     }
   }
+
+  @media (min-width: $desktop-screen) {
+    padding-top: 66px;
+    padding-bottom: 66px;
+  }
 }
 
 .footer__socials {
@@ -34,6 +42,10 @@
   display: flex;
   justify-content: center;
   gap: 24px;
+
+  @media (min-width: $tablet-screen) {
+    margin-left: 36px;
+  }
 }
 
 .footer__social-link {
@@ -44,6 +56,17 @@
   &::before {
     @include pseudo-element(28px, 22px);
     background-color: $special-color;
+    transition: background-color 250ms ease-in-out, opacity 250ms ease-in-out;
+  }
+
+  &:hover::before,
+  &:focus::before,
+  &:focus-visible::before {
+    background-color: $button-primary-color;
+  }
+
+  &:active::before {
+    opacity: 0.3;
   }
 }
 
@@ -65,8 +88,44 @@
   }
 }
 
+.footer__html-academy-logo-image-hover {
+  display: none;
+}
+
 .footer__html-academy-logo {
   display: flex;
   align-items: center;
   gap: 23px;
+  text-decoration: none;
+  transition: opacity 250ms ease-in-out;
+
+  @media (max-width: $mobile-screen-max) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    .footer__html-academy-logo-image {
+      display: none;
+    }
+
+    .footer__html-academy-logo-image-hover {
+      display: block;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.footer__html-academy-logo-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: $secondary-color;
 }

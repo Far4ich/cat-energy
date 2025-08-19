@@ -24,16 +24,25 @@
   margin: 0;
 }
 
+$container-padding-mobile: 10px;
+$container-padding-tablet: 20px;
+$container-padding-desktop: 100px;
+
 @mixin container {
   width: 280px;
-  padding: 0 20px;
+  padding-right: $container-padding-mobile;
+  padding-left: $container-padding-mobile;
   margin: 0 auto;
 
   @media (min-width: $tablet-screen) {
-    width: 704;
+    width: 708;
+    padding-right: $container-padding-tablet;
+    padding-left: $container-padding-tablet;
   }
 
   @media (min-width: $desktop-screen) {
     width: 1220px;
+    padding-right: $container-padding-desktop;
+    padding-left: $container-padding-desktop;
   }
 }
